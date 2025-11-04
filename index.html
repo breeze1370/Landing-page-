@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page Rif</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ecf0f1;
+        }
+        header {
+            padding: 40px 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+        body.dark .container {
+            background-color: rgba(44, 62, 80, 0.95);
+        }
+        .bio {
+            margin-bottom: 40px;
+        }
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .links li {
+            margin: 0;
+        }
+        .links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            text-decoration: none;
+            color: #007bff;
+            background-color: #fff;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 16px;
+        }
+        body.dark .links a {
+            color: #ecf0f1;
+            background-color: #34495e;
+        }
+        .links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: color 0.3s;
+        }
+        .toggle-btn:hover {
+            color: #ddd;
+        }
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.1);
+            color: #666;
+        }
+        body.dark footer {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+        <img src="profil.jpg" alt="Foto Profil" class="profile-img">
+        <h1>Rif</h1>
+    </header>
+    <div class="container">
+        <section class="bio">
+            <h2>me in a nutshell 💀</h2>
+            <p>I’m a tech freelancer obsessed with AI, robotics, crypto, and all that future-core sh*t.
+I mix logic, chaos, and a lil’ bit of cacing-cacing naga-naga to turn wild thoughts into real stuff.
+Livin’ somewhere between code, dreams, and madness.</p>
+        </section>
+        <section class="links">
+            <h2>I’m down here👇🏻 fam</h2>
+            <ul class="links">
+                <li><a href="https://breeze1370.github.io/Web-Portfolio-/"><img src="portfolio.png" alt="Portfolio Icon" class="icon">Portfolio</a></li>
+                <li><a href="https://www.tiktok.com/@rui_lexan?_r=1&_t=ZS-91737cpibg5"><img src="tikitoko.png" alt="TikTok Icon" class="icon">TikTok</a></li>
+                <li><a href="https://www.instagram.com/rui_lexan?igsh=YmVlOHViNHJwNm45"><img src="instagram.png" alt="Instagram Icon" class="icon">Instagram</a></li>
+                <li><a href="https://youtube.com/@rui_lexan?si=Qu7BdR7yOW0jm5I_"><img src="youtube.png" alt="YouTube Icon" class="icon">YouTube</a></li>
+                <li><a href="https://open.spotify.com/playlist/1MhJS6vrdYqsW1ptGM27FB?si=RghIUIKgTc-q8eqm36o-Aw"><img src="spotipay.png" alt="Spotify Icon" class="icon">Spotify</a></li>
+                <li><a href="mailto:rifarizkimaulana13@gmail.com"><img src="Gmail.png" alt="Email Icon" class="icon">Email Saya</a></li>
+                <li><a href="https://www.linkedin.com/in/rifa-rizki-maulana"><img src="linkedin.png" alt="LinkedIn Icon" class="icon">LinkedIn</a></li>
+                <!-- 🔥 Tambahan GitHub -->
+                <li><a href="https://github.com/breeze1370"><img src="github.png" alt="GitHub Icon" class="icon">GitHub</a></li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Lexan's. Semua hak dilindungi.</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const btn = document.querySelector('.toggle-btn');
+            btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
